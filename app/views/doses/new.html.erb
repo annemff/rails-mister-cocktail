@@ -1,2 +1,19 @@
-<h1>Cocktails#new</h1>
-<p>Find me in app/views/cocktails/new.html.erb</p>
+<h1>Add a new dose to your cocktail</h1>
+
+<br>
+  <%= link_to "Go back to cocktail", cocktail_path(@cocktail) %>
+<br>
+<br>
+<br>
+
+
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.input :description %>
+  <%= f.association :ingredient %>
+  <br>
+  <br>
+  <%= f.submit "Add a dose", class: "btn btn-primary" %>
+<% end %>
+
+
+
