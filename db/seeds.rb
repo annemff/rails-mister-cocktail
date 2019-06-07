@@ -1,6 +1,10 @@
 require 'json'
 require 'open-uri'
 
+Dose.destroy_all
+Cocktail.destroy_all
+Ingredient.destroy_all
+
 url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
 data = open(url).read
 drinks = JSON.parse(data)
@@ -10,3 +14,5 @@ drinks.each do |_drink, ingredients| # returns array of hashes
     Ingredient.create(name: ingredient['strIngredient1'])
   end
 end
+
+Ingredient.create(name: 'Coconut Cream')

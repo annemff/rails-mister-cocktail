@@ -10,7 +10,7 @@
 
 
 <%= simple_form_for [@cocktail, @dose] do |f| %>
-<%= f.association :ingredient %>
+<%= f.association :ingredient, collection: Ingredient.all.order(:name) %>
 <%= f.input :description %>
 <br>
 <br>
