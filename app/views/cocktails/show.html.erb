@@ -12,8 +12,14 @@
    </div>
 <% end %>
 
-<%= link_to "Add new dose", new_cocktail_dose_path(@cocktail) %>
+<%= link_to new_cocktail_dose_path(@cocktail) do %>
+<i class="fas fa-plus"></i> New Ingredient
+<% end %>
 <br>
-<%= link_to "Back to cocktail list", cocktails_path %>
+<br>
+<br>
+<%= link_to cocktails_path do %>
+<i class="fas fa-undo-alt"></i> Cocktail list
+<% end %>
 
 

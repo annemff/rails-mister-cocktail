@@ -1,2 +1,17 @@
-<h1>Cocktails#new</h1>
-<p>Find me in app/views/cocktails/new.html.erb</p>
+<h1>What is your cocktail's name?</h1>
+
+
+<%= simple_form_for [@cocktail] do |f| %>
+  <%= f.input :name %>
+  <br>
+  <br>
+  <%= f.submit "Add", class: "btn btn-primary" %>
+<% end %>
+
+<br>
+<br>
+<br>
+
+<%= link_to cocktails_path do %>
+<i class="fas fa-undo-alt"></i> Cocktail list
+<% end %>
